@@ -8,33 +8,39 @@ class Directory extends React.Component {
 			sections: [
 				{
 					title: "Matka Biryani",
-					imageURL:
+					imageUrl:
 						"https://media-cdn.tripadvisor.com/media/photo-m/1280/18/da/1d/22/matka-biryani.jpg",
 					id: 1,
+					linkUrl: "Biryani",
 				},
 				{
-					title: "Hyderabadi Biryani",
-					imageURL: "https://i.ytimg.com/vi/tR1PyPMYKdY/maxresdefault.jpg",
+					title: "Fries",
+					imageUrl:
+						"https://cdn.tasteatlas.com/images/dishes/37a5c7e2ca0f45aca4111c3b06796b1d.jpg",
 					id: 2,
+					linkUrl: "Fries",
 				},
 				{
-					title: "Afgani Biryani",
-					imageURL:
-						"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFvuy7e9R9nhngIxuRXCW7FPkgNU3x0Z3ZpfDDsp--bBirU3tWu4ORocdKCx3YBrdWpUE&usqp=CAU",
+					title: "Tandoor",
+					imageUrl:
+						"https://i0.wp.com/lemoninginger.com/wp-content/uploads/2016/01/1601_Snacks_TandooriPaneerTikka-003.jpg?resize=750%2C785",
 					id: 3,
+					linkUrl: "Tandoor",
 				},
 				{
-					title: "Tandoor Biryani",
-					imageURL: "https://i.ytimg.com/vi/nDWPMZ4rm1E/maxresdefault.jpg",
+					title: "Sandwich",
+					imageUrl:
+						"https://c.ndtvimg.com/2019-03/rlh4rojo_protein-rich-sandwich-ideas_625x300_04_March_19.jpg",
 					id: 4,
 					size: "large",
+					linkUrl: "Sandwich",
 				},
 				{
-					title: "Smoke Biryani",
-					imageURL:
-						"https://res.cloudinary.com/swiggy/image/upload/f_auto,q_auto,fl_lossy/bsh58aqqhklnns3gdwwp",
+					title: "Rolls",
+					imageUrl: "https://static.toiimg.com/photo/81590116.cms",
 					id: 5,
 					size: "large",
+					linkUrl: "Rolls",
 				},
 			],
 		};
@@ -42,8 +48,8 @@ class Directory extends React.Component {
 	render() {
 		return (
 			<div className="directory-menu-style">
-				{this.state.sections.map(({ title, imageURL, id, size }) => (
-					<MenuItem key={id} title={title} imageUrl={imageURL} size={size} />
+				{this.state.sections.map(({ id, ...sectionProps }) => (
+					<MenuItem key={id} {...sectionProps} />
 				))}
 			</div>
 		);
